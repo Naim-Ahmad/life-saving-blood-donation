@@ -4,7 +4,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { userSchema } from "@/utils/registerSchema";
 import Link from "next/link";
 
-const RegisterForm = () => {
+const LoginForm = () => {
   const {
     register,
     handleSubmit,
@@ -15,31 +15,12 @@ const RegisterForm = () => {
   return (
     <div>
       <h2 className="text-center font-medium text-black text-3xl">
-        Registration From{" "}
+        Login To Your Account{" "}
       </h2>
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="mt-10 flex flex-col space-y-10"
       >
-        <div>
-          <input
-            type="text"
-            placeholder="First Name"
-            {...register("firstName", { required: true })}
-            className="w-[407px] h-14 rounded-lg border border-color-gray outline-none px-3"
-          />
-          <p className="text-xs text-red-700">{errors?.firstName?.message}</p>
-        </div>
-        {/*  */}
-        <div>
-          <input
-            type="text"
-            placeholder="Last Name"
-            {...register("lastName", { required: true })}
-            className="w-[407px] h-14 rounded-lg border border-color-gray outline-none px-3"
-          />
-          <p className="text-xs text-red-700">{errors?.lastName?.message}</p>
-        </div>
         {/*  */}
         <div>
           <input
@@ -61,32 +42,18 @@ const RegisterForm = () => {
           />
           <p className="text-xs text-red-700">{errors?.password?.message}</p>
         </div>
-        <div>
-          <input
-            type="password"
-            placeholder="Confirm Password"
-            {...register("confirmPassword", { required: true })}
-            className="w-[407px] h-14 rounded-lg border border-color-gray outline-none px-3"
-          />
-          <p className="text-xs text-red-700">
-            {errors?.confirmPassword?.message}
-          </p>
-        </div>
         <p className="text-color-gray1">
-          Already have an account?{" "}
-          <Link className="text-cyan-600 hover:text-cyan-700" href={"/login"}>
-            login
-          </Link>
+          Don&apos;t have an account? <Link className="text-cyan-600 hover:text-cyan-700" href={"/register"}>register</Link>
         </p>
         <button
           type="submit"
           className="bg-black text-white w-[407px] rounded-lg h-11 text-base font-medium"
         >
-          Sign UP
+          Login
         </button>
       </form>
     </div>
   );
 };
 
-export default RegisterForm;
+export default LoginForm;
