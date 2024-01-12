@@ -1,11 +1,15 @@
-import styles from "./Register.module.css";
+import RegisterForm from "@/components/RegisterForm/RegisterForm";
+import Box from "@/components/shared/gradientBox/Box";
+
 const Register = () => {
   return (
     <section>
-      <div className="max-w-7xl mx-auto flex">
+      <div className="max-w-7xl mx-auto grid place-content-center lg:grid-cols-2 shadow-md my-5 p-5">
         {/* left side  */}
-        <div className={styles.box}></div>
+        <Box />
+
         {/* right side  */}
+        <RegisterForm />
       </div>
     </section>
   );
