@@ -4,6 +4,7 @@ import { userSchema } from "@/utils/registerSchema";
 import { yupResolver } from "@hookform/resolvers/yup";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
+import SocialLogin from "../shared/SocialLogin";
 
 const LoginForm = () => {
   const {
@@ -20,7 +21,7 @@ const LoginForm = () => {
       </h2>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="mt-10 flex flex-col items-center space-y-5"
+        className="mt-10 flex flex-col items-center space-y-3"
       >
         {/*  */}
         <div className="max-w-[407px]  w-full">
@@ -28,9 +29,15 @@ const LoginForm = () => {
             type="text"
             placeholder="Email"
             {...register("email", { required: true })}
-            className="w-full h-12 rounded-lg border border-color-gray outline-none px-3"
+            className={`w-full h-12 rounded-lg input input-bordered ${
+              errors?.email && "input-error"
+            }`}
           />
-          <p className="text-xs text-red-700">{errors?.email?.message}</p>
+          <div className="label">
+            <span className="label-text-alt text-red-700 ${errors?.email}">
+              {errors?.email?.message}
+            </span>
+          </div>
         </div>
         {/*  */}
 
@@ -39,25 +46,41 @@ const LoginForm = () => {
             type="password"
             placeholder="Password"
             {...register("password", { required: true })}
-            className="w-full h-12 rounded-lg border border-color-gray outline-none px-3"
+            className={`w-full h-12 rounded-lg input input-bordered ${
+              errors?.password && "input-error"
+            }`}
           />
-          <p className="text-xs text-red-700">{errors?.password?.message}</p>
+          <div className="label">
+            <span className="text-xs label-text-alt text-red-700">
+              {errors?.password?.message}
+            </span>
+          </div>
+          <span className="label-text-alt link link-hover">
+            Forget Password?
+          </span>
         </div>
-        <p className="text-color-gray1">
-          Don&apos;t have an account?{" "}
-          <Link
-            className="text-cyan-600 hover:text-cyan-700"
-            href={"/register"}
-          >
-            register
-          </Link>
-        </p>
+
+        <div className="max-w-[407px] w-full text-left pl-1 mb-3"></div>
+
         <button
           type="submit"
-          className="bg-black text-white max-w-[407px] w-full rounded-lg h-11 text-base font-medium"
+          className="btn btn-neutral max-w-[407px] w-full rounded-lg h-11 font-medium text-base"
         >
           Login
         </button>
+        <div className="max-w-[407px] w-full">
+          <p className="text-color-gray1">
+            Don&apos;t have an account?{" "}
+            <Link
+              className="text-cyan-600 hover:text-cyan-700"
+              href={"/register"}
+            >
+              register
+            </Link>
+          </p>
+        </div>
+        <div className="divider max-w-[407px] w-full mx-auto">OR</div>
+        <SocialLogin />
       </form>
     </div>
   );
