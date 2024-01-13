@@ -28,9 +28,15 @@ const LoginForm = () => {
             type="text"
             placeholder="Email"
             {...register("email", { required: true })}
-            className="w-full h-12 rounded-lg border border-color-gray outline-none px-3"
+            className={`w-full h-12 rounded-lg input input-bordered ${
+              errors?.email && "input-error"
+            }`}
           />
-          <p className="text-xs text-red-700">{errors?.email?.message}</p>
+          <div className="label">
+            <span className="label-text-alt text-red-700 ${errors?.email}">
+              {errors?.email?.message}
+            </span>
+          </div>
         </div>
         {/*  */}
 
@@ -39,9 +45,15 @@ const LoginForm = () => {
             type="password"
             placeholder="Password"
             {...register("password", { required: true })}
-            className="w-full h-12 rounded-lg border border-color-gray outline-none px-3"
+            className={`w-full h-12 rounded-lg input input-bordered ${
+              errors?.password && "input-error"
+            }`}
           />
-          <p className="text-xs text-red-700">{errors?.password?.message}</p>
+          <div className="label">
+            <span className="text-xs label-text-alt text-red-700">
+              {errors?.password?.message}
+            </span>
+          </div>
         </div>
         <p className="text-color-gray1">
           Don&apos;t have an account?{" "}
@@ -54,7 +66,7 @@ const LoginForm = () => {
         </p>
         <button
           type="submit"
-          className="bg-black text-white max-w-[407px] w-full rounded-lg h-11 text-base font-medium"
+          className="btn btn-neutral max-w-[407px] w-full rounded-lg h-11 font-medium text-base"
         >
           Login
         </button>

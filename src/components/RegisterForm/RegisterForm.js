@@ -19,61 +19,89 @@ const RegisterForm = () => {
       </h2>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="mt-10 flex flex-col items-center space-y-5 w-full"
+        className="mt-10 flex flex-col items-center w-full"
       >
-        <div className="max-w-[407px] w-full">
+        <div className="max-w-[407px] mb-2 w-full">
           <input
             type="text"
             placeholder="First Name"
             {...register("firstName", { required: true })}
-            className="w-full h-12  rounded-lg border border-color-gray outline-none px-3"
+            className={`w-full h-12 rounded-lg input input-bordered ${
+              errors?.firstName && "input-error"
+            }`}
           />
-          <p className="text-xs text-red-700">{errors?.firstName?.message}</p>
+          <div className="label">
+            <span className="label-text-alt text-red-700">
+              {errors?.firstName?.message}
+            </span>
+          </div>
         </div>
         {/*  */}
-        <div className="max-w-[407px] w-full">
+        <div className="max-w-[407px] mb-2 w-full">
           <input
             type="text"
             placeholder="Last Name"
             {...register("lastName", { required: true })}
-            className="w-full h-12 rounded-lg border border-color-gray outline-none px-3"
+            className={`w-full h-12 rounded-lg input input-bordered ${
+              errors?.lastName && "input-error"
+            }`}
           />
-          <p className="text-xs text-red-700">{errors?.lastName?.message}</p>
+          <div className="label">
+            <span className="label-text-alt text-red-700">
+              {errors?.lastName?.message}
+            </span>
+          </div>
         </div>
         {/*  */}
-        <div className="max-w-[407px] w-full">
+        <div className="max-w-[407px] mb-2 w-full">
           <input
             type="text"
             placeholder="Email"
             {...register("email", { required: true })}
-            className="w-full h-12 rounded-lg border border-color-gray outline-none px-3"
+            className={`w-full h-12 rounded-lg input input-bordered ${
+              errors?.email && "input-error"
+            }`}
           />
-          <p className="text-xs text-red-700">{errors?.email?.message}</p>
+          <div className="label">
+            <span className="label-text-alt text-red-700">
+              {errors?.email?.message}
+            </span>
+          </div>
         </div>
         {/*  */}
 
-        <div className="max-w-[407px] w-full">
+        <div className="max-w-[407px] mb-2 w-full">
           <input
             type="password"
             placeholder="Password"
             {...register("password", { required: true })}
-            className=" h-12 w-full rounded-lg border border-color-gray outline-none px-3"
+            className={`w-full h-12 rounded-lg input input-bordered ${
+              errors?.password && "input-error"
+            }`}
           />
-          <p className="text-xs text-red-700">{errors?.password?.message}</p>
+          <div className="label">
+            <span className="label-text-alt text-red-700">
+              {errors?.password?.message}
+            </span>
+          </div>
         </div>
 
-        <div className="max-w-[407px] w-full">
+        <div className="max-w-[407px] mb-2 w-full">
           <input
             type="password"
             placeholder="Confirm Password"
             {...register("confirmPassword", { required: true })}
-            className=" w-full h-12 rounded-lg border border-color-gray outline-none px-3"
+            className={`w-full h-12 rounded-lg input input-bordered ${
+              errors?.confirmPassword && "input-error"
+            }`}
           />
-          <p className="text-xs text-red-700">
-            {errors?.confirmPassword?.message}
-          </p>
+          <div className="label">
+            <span className="label-text-alt text-red-700">
+              {errors?.confirmPassword?.message}
+            </span>
+          </div>
         </div>
-        <p className="text-color-gray1">
+        <p className="text-color-gray1 mb-3">
           Already have an account?{" "}
           <Link className="text-cyan-600 hover:text-cyan-700" href={"/login"}>
             login
@@ -81,7 +109,7 @@ const RegisterForm = () => {
         </p>
         <button
           type="submit"
-          className="bg-black text-white max-w-[407px] w-full rounded-lg h-11 text-base font-medium"
+          className=" max-w-[407px] w-full rounded-lg btn btn-neutral text-base font-medium"
         >
           Sign UP
         </button>
