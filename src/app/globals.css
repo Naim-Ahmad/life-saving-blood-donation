@@ -2,4 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
+.activeNavLink {
+  color: #b32346;
+}
 
+.activeNavLink::after,
+.navItem::after {
+  content: "";
+  display: block;
+  width: 0%;
+  height: 5px;
+  transition: 0.5s;
+  border-radius: 3px;
+  background: linear-gradient(140deg, #b32346 27.98%, #6a0b37 55.57%);
+}
+
+.activeNavLink::after {
+  width: 100%;
+}
+
+.navItem:hover::after {
+  width: 100%;
+}
