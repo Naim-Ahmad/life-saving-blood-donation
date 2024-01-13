@@ -101,12 +101,14 @@ const RegisterForm = () => {
             </span>
           </div>
         </div>
-        <p className="text-color-gray1 mb-3">
-          Already have an account?{" "}
-          <Link className="text-cyan-600 hover:text-cyan-700" href={"/login"}>
-            login
-          </Link>
-        </p>
+        <div className="max-w-[407px] w-full">
+          <p className="text-color-gray1 mb-3">
+            Already have an account?{" "}
+            <Link className="text-cyan-600 hover:text-cyan-700" href={"/login"}>
+              login
+            </Link>
+          </p>
+        </div>
         <button
           type="submit"
           className=" max-w-[407px] w-full rounded-lg btn btn-neutral text-base font-medium"

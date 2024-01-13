@@ -20,7 +20,7 @@ const LoginForm = () => {
       </h2>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="mt-10 flex flex-col items-center space-y-5"
+        className="mt-10 flex flex-col items-center space-y-3"
       >
         {/*  */}
         <div className="max-w-[407px]  w-full">
@@ -54,22 +54,30 @@ const LoginForm = () => {
               {errors?.password?.message}
             </span>
           </div>
+          <span className="label-text-alt link link-hover">
+            Forget Password?
+          </span>
         </div>
-        <p className="text-color-gray1">
-          Don&apos;t have an account?{" "}
-          <Link
-            className="text-cyan-600 hover:text-cyan-700"
-            href={"/register"}
-          >
-            register
-          </Link>
-        </p>
+
+        <div className="max-w-[407px] w-full text-left pl-1 mb-3"></div>
+
         <button
           type="submit"
           className="btn btn-neutral max-w-[407px] w-full rounded-lg h-11 font-medium text-base"
         >
           Login
         </button>
+        <div className="max-w-[407px] w-full">
+          <p className="text-color-gray1">
+            Don&apos;t have an account?{" "}
+            <Link
+              className="text-cyan-600 hover:text-cyan-700"
+              href={"/register"}
+            >
+              register
+            </Link>
+          </p>
+        </div>
       </form>
     </div>
   );
