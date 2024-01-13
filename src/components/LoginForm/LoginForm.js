@@ -4,6 +4,7 @@ import { userSchema } from "@/utils/registerSchema";
 import { yupResolver } from "@hookform/resolvers/yup";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
+import SocialLogin from "../shared/SocialLogin";
 
 const LoginForm = () => {
   const {
@@ -78,6 +79,8 @@ const LoginForm = () => {
             </Link>
           </p>
         </div>
+        <div className="divider max-w-[407px] w-full mx-auto">OR</div>
+        <SocialLogin />
       </form>
     </div>
   );

@@ -3,6 +3,7 @@ import { userSchema } from "@/utils/registerSchema";
 import { yupResolver } from "@hookform/resolvers/yup";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
+import SocialLogin from "../shared/SocialLogin";
 
 const RegisterForm = () => {
   const {
@@ -12,6 +13,7 @@ const RegisterForm = () => {
   } = useForm({ resolver: yupResolver(userSchema) });
 
   const onSubmit = (data) => data;
+
   return (
     <div className="w-full">
       <h2 className="font-medium text-black text-3xl text-center ">
@@ -115,6 +117,8 @@ const RegisterForm = () => {
         >
           Sign UP
         </button>
+        <div className="divider max-w-[407px] w-full mx-auto">OR</div>
+        <SocialLogin />
       </form>
     </div>
   );
