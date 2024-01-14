@@ -1,4 +1,4 @@
-import logo from "@/assets/Logo.svg";
+import logo from "@/assets/drop.png"
 import NavLink from "@/components/navbar/NavLink";
 import { Inter } from "next/font/google";
 import Image from "next/image";
@@ -38,7 +38,7 @@ export default function RootLayout({ children }) {
               <nav className="w-full navbar max-w-7xl mx-auto ">
                 <div className="flex-1">
                   <div className="">
-                    <Image src={logo} alt="logo" />
+                    <Image src={logo} alt="logo" width={50} height={37}/>
                   </div>
                 </div>
                 <div className="flex-none lg:hidden">

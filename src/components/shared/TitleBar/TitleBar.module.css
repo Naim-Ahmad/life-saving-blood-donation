@@ -1,0 +1,7 @@
+.bar {
+    width: 100%;
+    height: 180px;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(90deg, #46052D -1.59%, #46052D -1.58%, #500732 14.15%, #5E0933 31.58%, #610834 46.9%, #6A0B37 62.75%, #991747 76.48%, #B32346 93.91%);
+}
