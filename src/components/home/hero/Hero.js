@@ -24,7 +24,7 @@ export default function Hero() {
             five centuries, but also the leap into electronic typesetting,
             remaining essentially unchanged.
           </p>
-          <button className="btn btn-neutral font-bold lg:text-2xl">
+          <button className="btn btn-neutral font-bold lg:text-2xl lg:btn-lg">
             Get Blood Now
           </button>
         </div>

@@ -34,10 +34,10 @@ export default function RootLayout({ children }) {
           <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
           <div className="drawer-content flex flex-col">
             {/* Navbar */}
-            <div className="backdrop-blur-lg sticky top-0 z-50 h-20">
+            <div className="backdrop-blur-lg sticky top-0 z-50">
               <nav className="w-full navbar max-w-7xl mx-auto ">
                 <div className="flex-1">
-                  <div className="w-16 lg:w-20">
+                  <div className="">
                     <Image src={logo} alt="logo" />
                   </div>
                 </div>
