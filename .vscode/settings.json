@@ -3,6 +3,7 @@
         "daisyui",
         "hookform",
         "reduxjs",
-        "tailwindcss"
+        "tailwindcss",
+        "upzila"
     ]
 }
