@@ -1,4 +1,4 @@
-import logo from "@/assets/Logo.svg";
+import logo from "@/assets/drop.png";
 import Image from "next/image";
 import Link from "next/link";
 import SubscribeForm from "./SubscribeForm";
@@ -9,12 +9,14 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex justify-between items-center px-10">
           <div>
-            <Image src={logo} alt="logo" />
+            <Image src={logo} alt="logo" width={32} height={37} />
           </div>
 
           <div className="flex flex-col sm:flex-row gap-3 lg:gap-6">
             <span>Ready to get started?</span>
-            <button className="btn">Donate Blood</button>
+            <Link href={"/donarRegistration"}>
+              <button className="btn">Donate Blood</button>
+            </Link>
           </div>
         </div>
 

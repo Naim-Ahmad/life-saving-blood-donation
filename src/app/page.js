@@ -5,6 +5,7 @@ import MIssion from "@/components/home/mission/MIssion";
 import Footer from "@/components/shared/footer/Footer";
 
 export default function Home() {
+  console.log("test")
   return (
     <>
       <main className="grid grid-cols-1">
